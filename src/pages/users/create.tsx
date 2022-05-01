@@ -1,7 +1,6 @@
-import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
-import { RiAddLine, RiPencilLine } from "react-icons/ri";
+import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Input } from "../../components/Form/Input";
 import { Header } from "../../components/Header";
-import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/SideBar";
 
 export default function UserCreate(){
@@ -23,6 +22,29 @@ export default function UserCreate(){
                     bg="gray.800" 
                     p="8" 
                 >
+                    <Heading size="lg" fontWeight="normal">Criar usuário</Heading>
+                
+                    <Divider my="6" borderColor="gray.700"></Divider>
+
+                    <VStack spacing="8">
+                        <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+                            <Input name="name" label="Nome Completo"/>
+                            <Input name="email" type="email" label="email"/>
+                        </SimpleGrid>
+
+                        <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
+                            <Input name="password" label="Senha"/>
+                            <Input name="password_confirmation" type="password" label="Confirmação da senha"/>
+                        </SimpleGrid>
+                    </VStack>
+
+                    <Flex mt="8" justify="flex-end">
+                        <HStack spacing="4">
+                            <Button colorScheme="whiteAlpha">Cancelar</Button>
+                            <Button colorScheme="pink">Salvar</Button>
+
+                        </HStack>
+                    </Flex>
                 </Box>
             </Flex>
         </Box>
